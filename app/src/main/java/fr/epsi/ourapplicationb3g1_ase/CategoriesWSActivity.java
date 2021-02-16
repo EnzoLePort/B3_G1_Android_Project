@@ -22,7 +22,7 @@ public class CategoriesWSActivity extends EpsiActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other);
-        setTitle("Students");
+        setTitle("CategoriesWSAc_");
         showBack();
         categories = new ArrayList<>();
         RecyclerView recyclerView = findViewById(R.id.recyclerViewCategories);
@@ -30,7 +30,7 @@ public class CategoriesWSActivity extends EpsiActivity {
         CategoriesAdapter categoriesAdapter = new CategoriesAdapter(this,categories);
         recyclerView.setAdapter(categoriesAdapter);
 
-        String url = "http://djemam.com/epsi/categories.json";
+        String url = "https://djemam.com/epsi/categories.json";
         WSCall wsCall = new WSCall(url, new WSCall.Callback() {
             @Override
             public void onComplete(String result) {
@@ -41,7 +41,7 @@ public class CategoriesWSActivity extends EpsiActivity {
                         Categories categorie = new Categories(jsonArray.getJSONObject(i));
                         categories.add(categorie);
                     }
-                    CategoriesAdapter.notifyDataSetChanged();
+                    categoriesAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

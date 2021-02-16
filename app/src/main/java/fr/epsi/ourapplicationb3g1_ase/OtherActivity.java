@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class OtherActivity extends EpsiActivity {
 
-    public static void displayActivity(EpsiActivity activity){
+    public static void displayActivity(EpsiActivity activity,String title){
         Intent intent=new Intent(activity, CategoriesWSActivity.class);
         activity.startActivity(intent);
     }
@@ -23,7 +23,7 @@ public class OtherActivity extends EpsiActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other);
-        setTitle("Students");
+        setTitle("OtherAct_");
         showBack();
         categories = new ArrayList<>();
         RecyclerView recyclerView = findViewById(R.id.recyclerViewCategories);
@@ -31,7 +31,7 @@ public class OtherActivity extends EpsiActivity {
         CategoriesAdapter categoriesAdapter = new CategoriesAdapter(this,categories);
         recyclerView.setAdapter(categoriesAdapter);
 
-        String url = "http://djemam.com/epsi/categories.json";
+        String url = "https://djemam.com/epsi/categories.json";
         WSCall wsCall = new WSCall(url, new WSCall.Callback() {
             @Override
             public void onComplete(String result) {
@@ -42,7 +42,7 @@ public class OtherActivity extends EpsiActivity {
                         Categories categorie = new Categories(jsonArray.getJSONObject(i));
                         categories.add(categorie);
                     }
-                    CategoriesAdapter.notifyDataSetChanged();
+                    categoriesAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -50,7 +50,7 @@ public class OtherActivity extends EpsiActivity {
 
             @Override
             public void onError(Exception e) {
-                Toast.makeText(CategoriesWSActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(OtherActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
         wsCall.run();
