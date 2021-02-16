@@ -12,7 +12,7 @@
         layout="@layout/layout_header"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewStudents"
+        android:id="@+id/recyclerViewCategories"
         android:layout_marginTop="70dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

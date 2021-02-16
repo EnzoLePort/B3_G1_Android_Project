@@ -1,17 +1,16 @@
 package fr.epsi.ourapplicationb3g1_ase;
 
-import java.util.ArrayList;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import java.util.ArrayList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class OtherActivity extends EpsiActivity {
+public class CategoriesWSActivity extends EpsiActivity {
 
     public static void displayActivity(EpsiActivity activity){
         Intent intent=new Intent(activity, CategoriesWSActivity.class);
@@ -55,4 +54,5 @@ public class OtherActivity extends EpsiActivity {
         });
         wsCall.run();
     }
+
 }
