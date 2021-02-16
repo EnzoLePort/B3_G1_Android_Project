@@ -11,7 +11,7 @@ public class MainActivity extends EpsiActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.buttonZone1).setOnClickListener(this);
-        findViewById(R.id.buttonZone1).setOnClickListener(this);
+        findViewById(R.id.buttonZone2).setOnClickListener(this);
     }
 
     public static void displayActivity(EpsiActivity activity){
@@ -26,7 +26,7 @@ public class MainActivity extends EpsiActivity implements View.OnClickListener {
                 StudentsActivity.displayActivity(this,"Infos");
                 break;
             case R.id.buttonZone2:
-                //OtherActivity.displayActivity(this,"Rayons");
+                OtherActivity.displayActivity(this,"Rayons");
                 break;
         }
     }
