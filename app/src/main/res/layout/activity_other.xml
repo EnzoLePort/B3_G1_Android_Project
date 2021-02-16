@@ -11,25 +11,10 @@
         android:layout_height="wrap_content"
         layout="@layout/layout_header"/>
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewStudents"
+        android:layout_marginTop="70dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
-            <Button
-                android:id="@+id/buttonZone1"
-                android:layout_marginTop="150dp"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center_horizontal"
-                android:text="ZONE 1"/>
-
-        </LinearLayout>
-    </ScrollView>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
