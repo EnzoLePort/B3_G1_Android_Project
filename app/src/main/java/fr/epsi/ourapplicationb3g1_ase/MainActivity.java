@@ -23,7 +23,7 @@ public class MainActivity extends EpsiActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.buttonZone1:
-                //StudentsActivity.displayActivity(this,"Infos");
+                StudentsActivity.displayActivity(this,"Infos");
                 break;
             case R.id.buttonZone2:
                 //OtherActivity.displayActivity(this,"Rayons");

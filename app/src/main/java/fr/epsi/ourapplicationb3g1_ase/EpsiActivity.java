@@ -2,9 +2,11 @@ package fr.epsi.ourapplicationb3g1_ase;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import android.widget.TextView;
 
 public class EpsiActivity extends AppCompatActivity {
 
@@ -19,7 +21,7 @@ public class EpsiActivity extends AppCompatActivity {
         super.finish();
         Log.d("tag","############## finish ################# :"+getClass().getSimpleName());
     }
-    /*
+
     public void showBack(){
         ImageView imageView=findViewById(R.id.imageViewBack);
         if(imageView!=null){
@@ -32,7 +34,6 @@ public class EpsiActivity extends AppCompatActivity {
             });
         }
     }
-    */
     public void setTitle(String title){
         TextView textView=findViewById(R.id.textViewTitle);
         if(textView!=null){
