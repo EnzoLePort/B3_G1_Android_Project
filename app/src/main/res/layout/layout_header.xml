@@ -14,12 +14,14 @@
             android:src="@drawable/back"
             android:layout_marginStart="5dp"
             android:layout_centerVertical="true"/>
+
         <TextView
             android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
+            android:maxWidth="280dp"
             android:layout_height="match_parent"
-            android:layout_centerInParent="true"
             android:gravity="center_vertical"
+            android:layout_centerInParent="true"
             android:text="Epsi"
             android:textSize="24sp"
             android:textColor="@android:color/white"/>

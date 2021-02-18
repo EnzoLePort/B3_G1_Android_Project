@@ -6,11 +6,12 @@ import android.widget.TextView;
 
 public class StudentInfoActivity extends EpsiActivity {
 
-    public static void displayActivity(EpsiActivity activity,String Name, String Email, String Groupe){
+    public static void displayActivity(EpsiActivity activity,String name,String lastName, String email, String groupe){
         Intent intent = new Intent(activity,StudentInfoActivity.class);
-        intent.putExtra("Name",Name);
-        intent.putExtra("Email",Email);
-        intent.putExtra("Groupe",Groupe);
+        intent.putExtra("name",name);
+        intent.putExtra("lastName",lastName);
+        intent.putExtra("email",email);
+        intent.putExtra("groupe",groupe);
 
         activity.startActivity(intent);
     }
@@ -19,28 +20,35 @@ public class StudentInfoActivity extends EpsiActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_info);
+        showBack();
+
+        //passage de la valeur du prenom
+        String name = getIntent().getExtras().getString("name","");
+        TextView textViewName = findViewById(R.id.NameInfo);
+        if(textViewName!=null){
+            textViewName.setText(name);
+        }
 
         //passage de la valeur du nom
-        String name = getIntent().getExtras().getString("Name","");
-        TextView textView=findViewById(R.id.NameInfo);
-        if(textView!=null){
-            textView.setText(name);
+        String lastName = getIntent().getExtras().getString("lastName","");
+        TextView textViewLastName = findViewById(R.id.lastNameInfo);
+        if(textViewLastName!=null){
+            textViewLastName.setText(lastName);
         }
 
         //passage de la valeur de l'email
-        String email = getIntent().getExtras().getString("Email","");
-        TextView textViewmail =findViewById(R.id.EmailInfo);
-        if(textViewmail!=null){
-            textViewmail.setText(email);
+        String email = getIntent().getExtras().getString("email","");
+        TextView textViewEmail =findViewById(R.id.EmailInfo);
+        if(textViewEmail!=null){
+            textViewEmail.setText(email);
         }
 
         //passage de la valeur du groupe
-        String group = getIntent().getExtras().getString("Groupe","");
-        TextView textViewgroup =findViewById(R.id.GroupeInfo);
-        if(textViewgroup!=null){
-            textViewgroup.setText(group);
+        String group = getIntent().getExtras().getString("groupe","");
+        TextView textViewGroup =findViewById(R.id.GroupeInfo);
+        if(textViewGroup!=null){
+            textViewGroup.setText(group);
         }
-
 
     }
 }

@@ -30,13 +30,13 @@ public class StudentsActivity extends EpsiActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.buttonAlexis:
-                StudentInfoActivity.displayActivity(this,"Alexis", "Alexis.zucher@epsi.fr", "Groupe 1");
+                StudentInfoActivity.displayActivity(this,"Alexis", "Zucher","Alexis.zucher@epsi.fr", "Groupe 1");
                 break;
             case R.id.buttonSami:
-                StudentInfoActivity.displayActivity(this,"Sami", "Sami.dief@epsi.fr", "Groupe 1");
+                StudentInfoActivity.displayActivity(this,"Sami", "Dief","Sami.dief@epsi.fr", "Groupe 1");
                 break;
             case R.id.buttonEnzo:
-                StudentInfoActivity.displayActivity(this,"Enzo", "Enzo.leport@epsi.fr", "Groupe 1");
+                StudentInfoActivity.displayActivity(this,"Enzo", "Le Port","Enzo.leport@epsi.fr", "Groupe 1");
                 break;
         }
     }

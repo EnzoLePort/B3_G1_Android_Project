@@ -23,8 +23,8 @@
             android:orientation="vertical" >
 
             <ImageView
-                android:layout_width="215dp"
-                android:layout_height="169dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
                 android:src="@drawable/avatar"
                 android:layout_gravity="center_horizontal"
                 />
@@ -33,39 +33,62 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Infos Etudiant :"
+                android:textSize="28sp"
+                android:layout_gravity="center_horizontal">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="nameHere"
+                    android:textSize="22sp"
+                    android:id="@+id/NameInfo">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="lastNameHere"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="22sp"
+                    android:id="@+id/lastNameInfo">
+                </TextView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="mailHere"
+                android:textSize="22sp"
+                android:id="@+id/EmailInfo"
                 android:layout_gravity="center_horizontal">
             </TextView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text=""
-                android:id="@+id/NameInfo"
-                android:layout_gravity="center_horizontal">
-            </TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text=""
-                android:id="@+id/EmailInfo"
-                android:layout_gravity="center_horizontal">
-            </TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text=""
+                android:text="groupHere"
+                android:textSize="22sp"
                 android:id="@+id/GroupeInfo"
                 android:layout_gravity="center_horizontal">
             </TextView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginTop="40sp"
+                android:textSize="22sp"
                 android:text="http://www.epsi.fr/"
                 android:layout_gravity="center_horizontal"
                 android:autoLink="web">
             </TextView>
-
-
 
         </LinearLayout>
     </ScrollView>

@@ -63,9 +63,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         holder.getLayoutCellProduct().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("what next ?");
-                //System.out.println("url : " + categorie.getProducts_url());
-                //ProductsActivity.displayActivity(activity,categorie.getTitle(),categorie.getProducts_url());
+                ProductDetailActivity.displayActivity(activity,product.getName(),product.getDescription(),product.getPicture_url());
             }
         });
     }
