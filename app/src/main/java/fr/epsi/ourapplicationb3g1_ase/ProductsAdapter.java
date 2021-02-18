@@ -1,12 +1,12 @@
 package fr.epsi.ourapplicationb3g1_ase;
 
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.ImageView;
-
 import androidx.annotation.NonNull;
+import android.view.LayoutInflater;
+import com.squareup.picasso.Picasso;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -59,7 +59,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         final Products product = products.get(position);
         holder.getTextViewName().setText(product.getName());
         holder.getTextViewDescription().setText(product.getDescription());
-        //Picasso.get().load(product.getPicture_url()).into(holder.getImageViewProduct());
+        Picasso.get().load(product.getPicture_url()).into(holder.getImageViewProduct());
         holder.getLayoutCellProduct().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
