@@ -1,8 +1,8 @@
 package fr.epsi.ourapplicationb3g1_ase;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.content.Intent;
 
 public class MainActivity extends EpsiActivity implements View.OnClickListener {
 
@@ -26,7 +26,7 @@ public class MainActivity extends EpsiActivity implements View.OnClickListener {
                 StudentsActivity.displayActivity(this,"Infos");
                 break;
             case R.id.buttonZone2:
-                OtherActivity.displayActivity(this,"Rayons");
+                CategoriesWSActivity.displayActivity(this,"Rayons");
                 break;
         }
     }

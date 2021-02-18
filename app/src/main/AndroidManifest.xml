@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.epsi.ourapplicationb3g1_ase">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +13,7 @@
         android:theme="@style/Theme.OurApplicationB3G1_ASE">
 
         <activity android:name=".CategoriesWSActivity"></activity>
-        <activity android:name=".OtherActivity"></activity>
+        <activity android:name=".ProductsWSActivity"></activity>
         <activity android:name=".StudentInfoActivity"></activity>
         <activity android:name=".StudentsActivity" />
         <activity android:name=".MainActivity" />

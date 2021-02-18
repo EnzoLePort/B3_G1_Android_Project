@@ -2,38 +2,39 @@ package fr.epsi.ourapplicationb3g1_ase;
 
 import android.os.Bundle;
 import org.json.JSONArray;
-import org.json.JSONObject;
 import java.util.ArrayList;
+import org.json.JSONObject;
 import android.widget.Toast;
-import org.json.JSONException;
 import android.content.Intent;
+import org.json.JSONException;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-public class CategoriesWSActivity extends EpsiActivity {
+public class ProductsWSActivity extends EpsiActivity {
 
-    public static void displayActivity(EpsiActivity activity,String title){
-        Intent intent=new Intent(activity, CategoriesWSActivity.class);
+    public static void displayActivity(EpsiActivity activity,String title,String url){
+        Intent intent=new Intent(activity, ProductsWSActivity.class);
         intent.putExtra("title",title);
+        intent.putExtra("url",url);
         activity.startActivity(intent);
     }
 
-    private ArrayList<Categories> categories;
+    private ArrayList<Products> products;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categories);
+        setContentView(R.layout.activity_products);
         showBack();
         String title = getIntent().getExtras().getString("title","");
         setTitle(title);
 
-        categories = new ArrayList<>();
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewCategories);
+        products = new ArrayList<>();
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewProducts);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        CategoriesAdapter categoriesAdapter = new CategoriesAdapter(this,categories);
-        recyclerView.setAdapter(categoriesAdapter);
+        ProductsAdapter productsAdapter = new ProductsAdapter(this,products);
+        recyclerView.setAdapter(productsAdapter);
 
-        String url = "https://djemam.com/epsi/categories.json";
+        String url = getIntent().getExtras().getString("url","");
         WSCall wsCall = new WSCall(url, new WSCall.Callback() {
             @Override
             public void onComplete(String result) {
@@ -41,10 +42,10 @@ public class CategoriesWSActivity extends EpsiActivity {
                     JSONObject jsonObject= new JSONObject(result);
                     JSONArray jsonArray = jsonObject.getJSONArray("items");
                     for(int i=0;i<jsonArray.length();i++){
-                        Categories categorie = new Categories(jsonArray.getJSONObject(i));
-                        categories.add(categorie);
+                        Products product = new Products(jsonArray.getJSONObject(i));
+                        products.add(product);
                     }
-                    categoriesAdapter.notifyDataSetChanged();
+                    productsAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -52,10 +53,9 @@ public class CategoriesWSActivity extends EpsiActivity {
 
             @Override
             public void onError(Exception e) {
-                Toast.makeText(CategoriesWSActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(ProductsWSActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
         wsCall.run();
     }
-
 }

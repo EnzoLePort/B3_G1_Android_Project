@@ -1,18 +1,14 @@
 package fr.epsi.ourapplicationb3g1_ase;
 
-import android.os.Handler;
-import android.os.Looper;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URL;
+import android.os.Looper;
+import android.os.Handler;
+import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.UnknownHostException;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ExecutorService;
 
 import javax.net.ssl.HttpsURLConnection;
 

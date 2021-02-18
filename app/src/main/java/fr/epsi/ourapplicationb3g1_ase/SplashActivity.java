@@ -1,8 +1,8 @@
 package fr.epsi.ourapplicationb3g1_ase;
 
+import android.os.Looper;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 
 public class SplashActivity extends EpsiActivity {
 

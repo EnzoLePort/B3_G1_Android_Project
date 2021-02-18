@@ -1,15 +1,12 @@
 package fr.epsi.ourapplicationb3g1_ase;
 
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import android.view.LayoutInflater;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.ViewHolder> {
     EpsiActivity activity;
@@ -53,8 +50,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
         holder.getLayoutCellCategorie().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("what next ?");
-                //ImageActivity.displayActivity(activity,student.getUrl(),student.getName());
+                ProductsWSActivity.displayActivity(activity,categorie.getTitle(),categorie.getProducts_url());
             }
         });
     }

@@ -1,9 +1,7 @@
 package fr.epsi.ourapplicationb3g1_ase;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
+import android.content.Intent;
 import android.widget.TextView;
 
 public class StudentInfoActivity extends EpsiActivity {
